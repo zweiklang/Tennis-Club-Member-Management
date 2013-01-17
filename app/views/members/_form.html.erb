@@ -1,7 +1,7 @@
 <%= simple_form_for(@member, :html => { :class => 'form-horizontal' }, :defaults => { :input_html => { :class => 'span4' } }) do |f| %>
   <% if @member.errors.any? %>
     <div class="alert alert-error" id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this type from being saved:</h2>
 
       <ul>
         <% @post.errors.full_messages.each do |msg| %>

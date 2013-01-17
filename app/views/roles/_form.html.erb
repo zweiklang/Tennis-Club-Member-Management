@@ -1,0 +1,26 @@
+<%= simple_form_for(@role, :html => { :class => 'form-horizontal' }, :defaults => { :input_html => { :class => 'span4' } }) do |f| %>
+    <% if @role.errors.any? %>
+        <div class="alert alert-error" id="error_explanation">
+          <h2><%= pluralize(@role.errors.count, "error") %> prohibited this type from being saved:</h2>
+
+          <ul>
+            <% @role.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.input :name, :label => 'Bezeichnung', :placeholder => 'Bezeichnung' %>
+    </div>
+    <div class="field">
+      <%= f.input :fee, :label => 'Gebühr', :placeholder => 'Mitgliedsbeitrag' %>
+    </div>
+    <div class="field">
+      <%= f.input :active, :as => :boolean, :label => 'Aktiv' %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Speichern', :class => 'btn' %>
+    </div>
+<% end %>

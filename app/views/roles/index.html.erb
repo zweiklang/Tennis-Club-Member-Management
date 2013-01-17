@@ -1,0 +1,32 @@
+<h1>Mitgliedstypen</h1>
+
+<table class="table">
+  <tr>
+    <th>Bezeichnung</th>
+    <th>Aktiv</th>
+    <th>Gebühr</th>
+    <th>Aktionen</th>
+  </tr>
+  <% @roles.each do |role| %>
+      <tr>
+        <td><%= role.name %></td>
+        <td><%= role.active %></td>
+        <td><%= role.fee %></td>
+        <td><div class="btn-group">
+          <% # Bootstrap-Button-Gruppe festlegen, mit Funktionalität %>
+          <%= link_to(content_tag(:i, nil, :class=>"icon-search"), role, :class => "btn")  %>
+          <%= link_to(content_tag(:i, nil, :class=>"icon-pencil"), edit_role_path(role), :class => "btn")  %>
+          <%= link_to(content_tag(:i, nil, :class => "icon-trash"), role, method: :delete, data: { confirm: 'Sind Sie sicher?' }, :class => "btn") %>
+        </div></td>
+      </tr>
+  <% end %>
+  <% if @roles.empty? %>
+      <tr>
+        <td colspan="4">Kein Rollen eingetragen!</td>
+      </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'Neuer Typ', new_role_path, :class => "btn btn-primary" %>

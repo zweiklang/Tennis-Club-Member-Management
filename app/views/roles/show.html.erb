@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bezeichnung:</b>
+  <%= @role.name %>
+</p>
+
+<p>
+  <b>Aktiv:</b>
+  <%= @role.active %>
+</p>
+
+<p>
+  <b>Gebühr:</b>
+  € <%= @role.fee %>
+</p>
+
+<%= link_to 'Bearbeiten', edit_role_path(@role) %> |
+<%= link_to 'Zurück', roles_path %>
