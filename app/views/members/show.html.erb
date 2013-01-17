@@ -6,27 +6,27 @@
 </p>
 
 <p>
-  <b>First Name:</b>
+  <b>Vorname:</b>
   <%= @member.first_name %>
 </p>
 
 <p>
-  <b>Street:</b>
+  <b>Straße:</b>
   <%= @member.street %>
 </p>
 
 <p>
-  <b>Zip:</b>
+  <b>PLZ:</b>
   <%= @member.zip %>
 </p>
 
 <p>
-  <b>Zip:</b>
+  <b>Ort:</b>
   <%= @member.city %>
 </p>
 
 <p>
-  <b>Phone:</b>
+  <b>Telefon:</b>
   <%= @member.phone %>
 </p>
 
@@ -36,8 +36,13 @@
 </p>
 
 <p>
-  <b>Birthday:</b>
-  <%= @member.birthday %>
+  <b>Geburtstag:</b>
+  <%= @member.birthday.strftime("%d. %B %Y") %>
+</p>
+
+<p>
+  <b>Alter:</b>
+  <%= age(@member.birthday) %>
 </p>
 
 <p>

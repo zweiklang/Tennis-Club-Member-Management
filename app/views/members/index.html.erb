@@ -3,18 +3,20 @@
 <table class="table">
   <tr>
     <th>Name</th>
-    <th>First name</th>
-    <th>Street</th>
-    <th>Zip</th>
-    <th>City</th>
-    <th>Phone</th>
+    <th>Vorname</th>
+    <th>Straße</th>
+    <th>PLZ</th>
+    <th>Ort</th>
+    <th>Telefon</th>
     <th>Email</th>
-    <th>Birthday</th>
+    <th>Geburtstag</th>
+    <th>Alter</th>
     <th>Status</th>
     <th>Aktionen</th>
   </tr>
 
-<% @members.each do |member| %>
+<% @members.each do |member|
+%>
   <tr>
     <td><%= member.name %></td>
     <td><%= member.first_name %></td>
@@ -23,7 +25,8 @@
     <td><%= member.city %></td>
     <td><%= member.phone %></td>
     <td><%= member.email %></td>
-    <td><%= member.birthday %></td>
+    <td><%= member.birthday.strftime("%d. %b %Y") %></td>
+    <td><%= age(member.birthday)  %></td>
     <td><%= member.status_id %></td>
     <td><div class="btn-group">
       <% # Bootstrap-Button-Gruppe festlegen, mit Funktionalität %>
