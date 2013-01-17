@@ -1,53 +1,46 @@
-<%= form_for(@member) do |f| %>
+<%= simple_form_for(@member, :html => { :class => 'form-horizontal' }, :defaults => { :input_html => { :class => 'span4' } }) do |f| %>
   <% if @member.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+    <div class="alert alert-error" id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
-      <% @member.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.input :name, :label => 'Name', :placeholder => 'Nachname' %>
   </div>
     <div class="field">
-      <%= f.label :first_name %><br />
-      <%= f.text_field :first_name %>
+      <%= f.input :first_name, :label => 'Vorname', :placeholder => 'Vorname' %>
     </div>
   <div class="field">
-    <%= f.label :street %><br />
-    <%= f.text_field :street %>
+    <%= f.input :street, :label => 'Straße', :placeholder => 'Straße' %>
   </div>
   <div class="field">
-    <%= f.label :zip %><br />
-    <%= f.text_field :zip %>
+    <%= f.input :zip, :label => 'Postleitzahl', :placeholder => 'PLZ' %>
   </div>
     <div class="field">
-      <%= f.label :city %><br />
-      <%= f.text_field :city %>
+      <%= f.input :city, :label => 'Ort', :placeholder => 'Ort' %>
     </div>
   <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
+    <%= f.input :phone, :label=> 'Telefon', :placeholder => 'Telefon' %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.input :email, :label => 'E-Mail', :placeholder => 'mail@server.com' %>
   </div>
   <div class="field">
-    <%= f.label :birthday %><br />
-    <%= f.date_select :birthday, :start_year => 1920 %>
+    <%= f.input :birthday, :as => :date, :start_year => Date.today.year - 90,
+                :end_year => Date.today.year - 1, :discard_day => false,
+                :order => [:day, :month, :year], :label => 'Geburtstag', :input_html => { :class => 'span2' } %>
   </div>
   <div class="field">
-    <%= f.label :status_id %><br />
-    <%= f.text_field :status_id %>
+    <%= f.input :status_id, :label => 'Status' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Speichern', :class => 'btn' %>
   </div>
 <% end %>
