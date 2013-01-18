@@ -1,4 +1,7 @@
 class MembersController < ApplicationController
+  def get_roles
+    @roles = Role.all
+  end
   # GET /members
   # GET /members.json
   def index
@@ -18,6 +21,7 @@ class MembersController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @member }
+      format.xml { render xml: @member }
     end
   end
 
@@ -25,6 +29,7 @@ class MembersController < ApplicationController
   # GET /members/new.json
   def new
     @member = Member.new
+    get_roles
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +40,7 @@ class MembersController < ApplicationController
   # GET /members/1/edit
   def edit
     @member = Member.find(params[:id])
+    get_roles
   end
 
   # POST /members

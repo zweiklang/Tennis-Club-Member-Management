@@ -11,7 +11,7 @@
       <tr>
         <td><%= role.name %></td>
         <td><%= role.active %></td>
-        <td><%= role.fee %></td>
+        <td>€ <%= role.fee %></td>
         <td><div class="btn-group">
           <% # Bootstrap-Button-Gruppe festlegen, mit Funktionalität %>
           <%= link_to(content_tag(:i, nil, :class=>"icon-search"), role, :class => "btn")  %>
@@ -22,7 +22,7 @@
   <% end %>
   <% if @roles.empty? %>
       <tr>
-        <td colspan="4">Kein Rollen eingetragen!</td>
+        <td colspan="4">Keine Rollen eingetragen!</td>
       </tr>
   <% end %>
 </table>

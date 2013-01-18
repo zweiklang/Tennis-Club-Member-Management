@@ -35,10 +35,10 @@
   <div class="field">
     <%= f.input :birthday, :as => :date, :start_year => Date.today.year - 90,
                 :end_year => Date.today.year - 1, :discard_day => false,
-                :order => [:day, :month, :year], :label => 'Geburtstag', :input_html => { :class => 'span2' } %>
+                :order => [:day, :month, :year], :label => 'Geburtstag', :input_html => { :class => '' } %>
   </div>
   <div class="field">
-    <%= f.input :status_id, :label => 'Status' %>
+    <%= f.input :role_id, :label => 'Mitgliedstyp', :collection => @roles %>
   </div>
   <div class="actions">
     <%= f.submit 'Speichern', :class => 'btn' %>
