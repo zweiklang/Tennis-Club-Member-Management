@@ -1,10 +1,9 @@
 <div class="navbar navbar-inverse fixed top">
   <div class="navbar-inner">
-    <a class="brand" href="#">Mitgliederverwaltung</a>
+    <%=  link_to "Mitgliederverwaltung", members_path, :class => 'brand'  %>
     <ul class="nav">
-      <li class="active"><a href="../">Home</a></li>
-      <li><a href="../roles/">Mitgliedstypen</a></li>
-      <li><a href="#">Link</a></li>
+      <%= nav_link_to 'Mitglieder', members_path %>
+      <%= nav_link_to 'Mitgliedstypen', roles_path %>
     </ul>
   </div>
 </div>

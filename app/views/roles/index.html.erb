@@ -10,7 +10,7 @@
   <% @roles.each do |role| %>
       <tr>
         <td><%= role.name %></td>
-        <td><%= role.active %></td>
+        <td><%= content_tag(:i, '', :class => set_check(role.active)) %></td>
         <td>€ <%= role.fee %></td>
         <td><div class="btn-group">
           <% # Bootstrap-Button-Gruppe festlegen, mit Funktionalität %>

@@ -7,7 +7,7 @@
 
 <p>
   <b>Aktiv:</b>
-  <%= @role.active %>
+  <%= content_tag(:i, '', :class => set_check(@role.active)) %>
 </p>
 
 <p>

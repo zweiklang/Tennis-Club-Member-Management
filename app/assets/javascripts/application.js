@@ -23,3 +23,5 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 });
+
+$('.active').closest('li.dropdown').addClass('active');

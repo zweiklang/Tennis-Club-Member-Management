@@ -18,7 +18,7 @@
       <%= f.input :fee, :label => 'Gebühr', :placeholder => 'Mitgliedsbeitrag' %>
     </div>
     <div class="field">
-      <%= f.input :active, :as => :boolean, :label => 'Aktiv' %>
+      <%= f.input :active, :as => :boolean, :label => 'Aktiv', :input_html => { :class => 'checkbox' } %>
     </div>
     <div class="actions">
       <%= f.submit 'Speichern', :class => 'btn' %>
