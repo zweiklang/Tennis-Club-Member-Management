@@ -1,7 +1,10 @@
 class MembersController < ApplicationController
+
+  # Get all roles
   def get_roles
     @roles = Role.all
   end
+
   # GET /members
   # GET /members.json
   def index
