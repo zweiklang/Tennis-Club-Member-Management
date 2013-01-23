@@ -1,10 +1,10 @@
 <%= simple_form_for(@member, :html => { :class => 'form-horizontal' }, :defaults => { :input_html => { :class => 'span4' } }) do |f| %>
   <% if @member.errors.any? %>
     <div class="alert alert-error" id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this type from being saved:</h2>
+      <h2><%= pluralize(@member.errors.count, "error") %> prohibited this type from being saved:</h2>
 
       <ul>
-        <% @post.errors.full_messages.each do |msg| %>
+        <% @member.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
         <% end %>
       </ul>
@@ -38,7 +38,7 @@
                 :order => [:day, :month, :year], :label => 'Geburtstag', :input_html => { :class => '' } %>
   </div>
   <div class="field">
-    <%= f.input :role_id, :label => 'Mitgliedstyp', :collection => @roles %>
+    <%= f.association :role, :label => 'Mitgliedstyp', :prompt => "Bitte Mitgliedstyp auswählen" %>
   </div>
   <div class="actions">
     <%= f.submit 'Speichern', :class => 'btn' %>
